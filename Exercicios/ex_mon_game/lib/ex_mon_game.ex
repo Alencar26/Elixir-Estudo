@@ -1,9 +1,9 @@
 defmodule ExMonGame do
   alias ExMonGame.{Game, Player}
   alias ExMonGame.Game.{Status, Actions}
-  #alias ExMonGame.Game
-  #alias ExMonGame.Player
-  #alias ExMonGame.Player, as: CriaPlayer (poderia ser assim também)
+  # alias ExMonGame.Game
+  # alias ExMonGame.Player
+  # alias ExMonGame.Player, as: CriaPlayer (poderia ser assim também)
 
   @computer_name "Robozito"
   @computer_moves [:move_avg, :move_rnd, :move_heal]

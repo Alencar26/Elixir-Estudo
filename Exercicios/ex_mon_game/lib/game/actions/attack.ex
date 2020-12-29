@@ -2,8 +2,8 @@ defmodule ExMonGame.Game.Actions.Attack do
   alias ExMonGame.Game
   alias ExMonGame.Game.Status
 
-  #constantes:
-  #utlizando range (é como se eu tivesse uma lista de 18 à 25)
+  # constantes:
+  # utlizando range (é como se eu tivesse uma lista de 18 à 25)
   @move_avg_power 18..25
   @move_rnd_power 10..35
 

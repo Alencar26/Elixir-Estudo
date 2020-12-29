@@ -22,24 +22,24 @@ defmodule ExMonGame.GameTest do
       expected_response = %{
         computer: %ExMonGame.Player{
           life: 100,
-          moves: %{move_avg: :chute,move_heal: :cura,move_rnd: :soco},
+          moves: %{move_avg: :chute, move_heal: :cura, move_rnd: :soco},
           name: "computer"
         },
         player: %ExMonGame.Player{
           life: 100,
-          moves: %{move_avg: :chute,move_heal: :cura,move_rnd: :soco},
+          moves: %{move_avg: :chute, move_heal: :cura, move_rnd: :soco},
           name: "player"
         },
         status: :started,
-        turn: :player}
+        turn: :player
+      }
 
-      assert Game.info() ==  expected_response
+      assert Game.info() == expected_response
     end
   end
 
   describe "update/1" do
     test "returns the game state updated" do
-
       player = Player.build("player", :chute, :soco, :cura)
       computer = Player.build("computer", :chute, :soco, :cura)
 
@@ -48,38 +48,40 @@ defmodule ExMonGame.GameTest do
       expected_response = %{
         computer: %ExMonGame.Player{
           life: 100,
-          moves: %{move_avg: :chute,move_heal: :cura,move_rnd: :soco},
+          moves: %{move_avg: :chute, move_heal: :cura, move_rnd: :soco},
           name: "computer"
         },
         player: %ExMonGame.Player{
           life: 100,
-          moves: %{move_avg: :chute,move_heal: :cura,move_rnd: :soco},
+          moves: %{move_avg: :chute, move_heal: :cura, move_rnd: :soco},
           name: "player"
         },
         status: :started,
-        turn: :player}
+        turn: :player
+      }
 
-      assert Game.info() ==  expected_response
+      assert Game.info() == expected_response
 
       new_state = %{
         computer: %ExMonGame.Player{
           life: 58,
-          moves: %{move_avg: :chute,move_heal: :cura,move_rnd: :soco},
+          moves: %{move_avg: :chute, move_heal: :cura, move_rnd: :soco},
           name: "computer"
         },
         player: %ExMonGame.Player{
           life: 85,
-          moves: %{move_avg: :chute,move_heal: :cura,move_rnd: :soco},
+          moves: %{move_avg: :chute, move_heal: :cura, move_rnd: :soco},
           name: "player"
         },
         status: :started,
-        turn: :player}
+        turn: :player
+      }
 
-        Game.update(new_state)
+      Game.update(new_state)
 
-        expected_response = %{new_state | turn: :computer, status: :continue}
+      expected_response = %{new_state | turn: :computer, status: :continue}
 
-        assert Game.info() ==  expected_response
+      assert Game.info() == expected_response
     end
   end
 end
